@@ -5,11 +5,19 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Create a New Thread</div>
 
                 <div class="panel-body">
-
-                    You are logged in!
+                    <div class="form-group">
+                      <label>Title:</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Body:</label>
+                      <textarea type="text" rows="7" class="form-control"></textarea>
+                      <h1>  </h1>
+                      <button type="button" class="btn btn-info" style="background-color:#5bc0de; border-color:#46B8D9">Publish</button>
+                    </div>
                 </div>
             </div>
         </div>
