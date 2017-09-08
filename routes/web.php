@@ -10,6 +10,6 @@ Route::get('/threads/create', function(){
     return view('threads.create');
 });
 
-Route::get('/greeting', function(){
-    return view('greeting');
+Route::get('/messages/greeting', function(){
+    return view('messages.greeting');
 });
