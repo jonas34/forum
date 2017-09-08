@@ -13,3 +13,7 @@ Route::get('/threads/create', function(){
 Route::get('/messages/greeting', function(){
     return view('messages.greeting');
 });
+
+Route::get('/messages/hello', function(){
+    return view('messages.hello', ['name' => 'Jonas']);
+});
