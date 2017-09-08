@@ -15,5 +15,6 @@ Route::get('/messages/greeting', function(){
 });
 
 Route::get('/messages/hello', function(){
-    return view('messages.hello', ['name' => 'Jonas']);
+    $name = 'Jonas';
+    return view('messages.hello', compact('name'));
 });
