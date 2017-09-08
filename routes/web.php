@@ -9,3 +9,7 @@ Route::get('/threads', function(){
 Route::get('/threads/create', function(){
     return view('threads.create');
 });
+
+Route::get('/greeting', function(){
+    return view('greeting');
+});
