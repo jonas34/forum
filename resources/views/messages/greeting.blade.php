@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1> Hello, I'm Jonas </h1>
+    <h1> This is greeting number {{ $id }} with
+          {{ $count }} replies
+    </h1>
   </body>
 </html>
