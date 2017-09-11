@@ -10,9 +10,10 @@ Route::get('/threads/create', function(){
     return view('threads.create');
 });
 
-Route::get('/messages/greeting/{id}/{count}', function($id, $count){
-    return view('messages.greeting', compact('id', 'count'));
-})->where(['id' => '[0-9]+', 'count' => '[0-9]+']);
+Route::get('/messages/greeting/{id}', function($id){
+    $greetings = ['Bæ', 'Bye', 'Adios', 'Miasto', 'Hej Hej'];
+    return view('messages.greeting', ['greetings' => $greetings[$id]]);
+})->where(['id' => '[0-4]+']);
 
 Route::get('/messages/hello', function(){
     $name = 'Jonas';
