@@ -2,7 +2,7 @@
 <html>
   <body>
     <h1>
-      {{ $greetings }}
+      {{ $name }}
     </h1>
   </body>
 </html>
