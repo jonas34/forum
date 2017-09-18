@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ThreadsController extends Controller
 {
     public function index()
     {
-      $threads = [
-        ['title' => 'Titill A', 'body' => 'Lorem Ipsum dolor set.'],
-        ['title' => 'Titill B', 'body' => 'Þetta er B']
+      $threads = DB::select('select * from threads');
 
-      ];
+
       return view('threads.index', compact('threads'));
     }
 
@@ -25,6 +24,9 @@ class ThreadsController extends Controller
 
     public function show($id)
     {
+      $thread = DB::select('select * from threads where id='. $id);
+      dd($thread);
+
       return view('threads.show');
     }
 }

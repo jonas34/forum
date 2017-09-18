@@ -8,27 +8,23 @@
                 <div class="panel-heading">Forum Threads</div>
 
                 <div class="panel-body">
-                  @foreach($threads as $threads)
+                  @foreach($threads as $thread)
+                    <h2 class="panel-title"></h2>
+                      <h3>
+                        {{ $thread->title }}
+                      </h3>
 
-                    <h2 class="panel-title"> {{ $threads['title'] }} </h2>
-                      <p>
-                        {{ $threads['body'] }}
-                      </p>
-                    <hr>
-                    @endforeach
-                  <!-- Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne new manners savings staying had. Under folly balls death own point now men. Match way these she avoid see death. She whose drift their fat off.
-                    He do subjects prepared bachelor juvenile ye oh. He feelings removing informed he as ignorant we prepared. Evening do forming observe spirits is in. -->
-                </div>
+                    </div>
 
                 <div class="panel-body">
-                  <h4 class="panel-title">  <!-- Cool Lesson--> </h4>
+                  <h4 class="panel-title"></h4>
                   <h5>
-
+                    {{ $thread->body }}
                   </h5>
-                  <!-- Both rest of know draw fond post as. It agreement defective to excellent. Feebly do engage of narrow. Extensive repulsive belonging depending if promotion be zealously as. Preference inquietude ask now are dispatched led appearance. Small meant in so doubt hopes. Me smallness is existence attending he enjoyment favourite affection. Delivered is to ye belonging enjoyment preferred. Astonished and acceptance men two discretion. Law education recommend did objection how old.
-                  She literature discovered increasing how diminution understood. Though and highly the enough county for man. -->
-                </div>
 
+                </div>
+                <hr>
+              @endforeach
             </div>
         </div>
     </div>
