@@ -17,16 +17,21 @@ class ThreadsController extends Controller
 
     public function create()
     {
-      $countries = ['Ísland', 'Ísland', 'Írland', 'Ísland', 'Írland'];
+      $tasks = [
+        ['title' => 'Vinna', 'complete' => false, 'anchor' => 'http://www.grindavik.is'],
+        ['title' => 'Læra', 'complete' => true, 'anchor' => 'http://www.fss.is'],
+        ['title' => 'Versla', 'complete' => false, 'anchor' => 'http://www.bonus.is'],
+        ['title' => 'Sofa', 'complete' => true, 'anchor' => 'http://www.ikea.is'],
+        ['title' => 'Chilla', 'complete' => false, 'anchor' => 'http://www.nba.com']
+      ];
 
-      return view('threads.create', compact('countries'));
+      return view('threads.create', compact('tasks'));
     }
 
     public function show($id)
     {
-      $thread = DB::select('select * from threads where id='. $id);
-      dd($thread);
+      $thread = DB::select('select * from threads where id=?', [$id]);
 
-      return view('threads.show');
+      return view('threads.show', compact('thread'));
     }
 }

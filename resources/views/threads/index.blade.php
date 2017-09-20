@@ -18,9 +18,9 @@
 
                 <div class="panel-body">
                   <h4 class="panel-title"></h4>
-                  <h5>
+                  <p>
                     {{ $thread->body }}
-                  </h5>
+                  </p>
 
                 </div>
                 <hr>

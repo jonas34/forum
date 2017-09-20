@@ -19,15 +19,21 @@
                       <button type="button" class="btn btn-info" style="background-color:#5bc0de; border-color:#46B8D9">Publish</button>
                     </div>
                 </div>
-                @foreach($countries as $country)
+                <ul>
+                  @foreach($tasks as $task)
 
-                  @if($country === 'Ísland')
-                    <h1>{{ $country }}</h1>
-                  @else
-                    <p>{{ $country }}</p>
-                  @endif
+                    @if( ! $task ['complete'] )
+                      <li>
+                        <a href="{{ $task['anchor'] }}"> {{ $task['title'] }}</li></a>
+                    @else
+                      <li>
+                        <a href="{{ $task['anchor'] }}"></a>
+                          <s>{{ $task['title'] }}</s>
+                      </li>
+                    @endif
 
-                @endforeach
+                  @endforeach
+                </ul>
             </div>
         </div>
     </div>
