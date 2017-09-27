@@ -15,3 +15,7 @@ Route::get('/threads/create', 'ThreadsController@create')->middleware('auth');
 Route::get('/threads/{id}', 'ThreadsController@show');
 
 Route::get('/profile', 'ProfileController@index');
+
+Route::get('/comment', 'CommentController@index');
+Route::get('/comment/3', 'CommentController@show')->middleware('auth');
+Route::post('/comment', 'CommentController@store')->middleware('auth');
