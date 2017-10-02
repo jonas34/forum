@@ -9,30 +9,21 @@ class ThreadsController extends Controller
 {
     public function index()
     {
-      $threads = DB::select('select * from threads');
-
+      $threads = DB::table('threads')->get();
 
       return view('threads.index', compact('threads'));
     }
 
     public function create()
     {
-      $tasks = [
-        ['title' => 'Vinna', 'complete' => false, 'anchor' => 'http://www.grindavik.is'],
-        ['title' => 'Læra', 'complete' => true, 'anchor' => 'http://www.fss.is'],
-        ['title' => 'Versla', 'complete' => false, 'anchor' => 'http://www.bonus.is'],
-        ['title' => 'Sofa', 'complete' => true, 'anchor' => 'http://www.ikea.is'],
-        ['title' => 'Chilla', 'complete' => false, 'anchor' => 'http://www.nba.com']
-      ];
-
-      return view('threads.create', compact('tasks'));
+      return view('threads.create');
     }
 
     public function show($id)
     {
-      $thread = DB::select('select * from threads where id=?', [$id]);
+      $threads = DB::table('threads')->where('id', $id)->first();
 
-      return view('threads.show', compact('thread'));
+      return view('threads.show', compact('threads'));
     }
 
     public function store()

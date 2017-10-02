@@ -23,19 +23,7 @@
                   </form>
                 </div>
                 <ul>
-                  @foreach($tasks as $task)
 
-                    @if( ! $task ['complete'] )
-                      <li>
-                        <a href="{{ $task['anchor'] }}"> {{ $task['title'] }}</li></a>
-                    @else
-                      <li>
-                        <a href="{{ $task['anchor'] }}"></a>
-                          <s>{{ $task['title'] }}</s>
-                      </li>
-                    @endif
-
-                  @endforeach
                 </ul>
             </div>
         </div>
