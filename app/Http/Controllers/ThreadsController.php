@@ -22,14 +22,19 @@ class ThreadsController extends Controller
 
     public function show($id)
     {
-      $threads = DB::table('threads')->where('id', $id)->first();
+      $threads = Thread::find($id);
 
       return view('threads.show', compact('threads'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
-      dd('Store method');
+      $thread = new Thread;
+      $thread->title = $request->title;
+      $thread->body = $request->body;
+      $thread->user_id = 1;
+      $thread->save();
 
+      return redirect('/threads');
     }
 }
