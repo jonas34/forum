@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Thread;
 
 class ThreadsController extends Controller
 {
     public function index()
     {
-      $threads = DB::table('threads')->get();
+      $threads = Thread::all();
 
       return view('threads.index', compact('threads'));
     }

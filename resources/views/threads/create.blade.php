@@ -12,11 +12,11 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                       <label>Title:</label>
-                      <input type="text" class="form-control">
+                      <input type="text" name="title" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Body:</label>
-                      <textarea type="text" rows="7" class="form-control"></textarea>
+                      <textarea type="text" name="body" rows="7" class="form-control"></textarea>
                       <h1>  </h1>
                       <button class="btn btn-info" style="background-color:#5bc0de; border-color:#46B8D9">Publish</button>
                     </div>
