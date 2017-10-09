@@ -29,6 +29,7 @@ class ThreadsController extends Controller
 
     public function store(Request $request)
     {
+      // Validate
       $thread = new Thread;
       $thread->title = $request->title;
       $thread->body = $request->body;
