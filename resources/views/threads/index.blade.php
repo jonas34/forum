@@ -3,22 +3,33 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Forum Threads</div>
-                  @foreach($threads as $thread)
-                    <h2 class="panel-title"></h2>
-                      <div class="panel-body">
-                        {{ $thread->title }}
-                    </div>
-                <div class="panel-body">
-                  <h4 class="panel-title"></h4>
-                    {{ $thread->body }}
+        @foreach($threads as $thread)
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+
+                    <div class="panel-body">
+
+                    
+                        <article>
+                            <div>
+                                <h4>
+                                    <a href="/threads/{{ $thread->id }}">
+                                        {{ $thread->title }}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="body">
+                                {{ $thread->body }}
+                            </div>
+                        </article>
+                    
+
+                    
                 </div>
-                <hr>
-              @endforeach
             </div>
+
         </div>
+        @endforeach
     </div>
 </div>
 @endsection

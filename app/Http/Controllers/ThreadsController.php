@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -9,9 +10,14 @@ use App\Thread;
 
 class ThreadsController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth')->except('index', 'show');
+    }
+
     public function index()
     {
-      $threads = Thread::all();
+      $threads = Thread::latest()->get();
 
       return view('threads.index', compact('threads'));
     }
@@ -46,7 +52,7 @@ class ThreadsController extends Controller
       $thread = new Thread;
       $thread->title = $request->title;
       $thread->body = $request->body;
-      $thread->user_id = 1;
+      $thread->user_id = Auth::user()->id;
       $thread->save();
 
       return redirect('/threads');
